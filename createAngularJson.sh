@@ -1,3 +1,5 @@
+PROJECT_NAME=skeleton
+
 cat <<EOL > angular.json
 {
   "\$schema": "./node_modules/@angular/cli/lib/config/schema.json",
@@ -8,7 +10,7 @@ cat <<EOL > angular.json
   },
   "newProjectRoot": "projects",
   "projects": {
-    "skeleton": {
+    "$PROJECT_NAME": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -18,7 +20,7 @@ cat <<EOL > angular.json
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/skeleton",
+            "outputPath": "dist/$PROJECT_NAME",
             "index": "public/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -62,10 +64,10 @@ cat <<EOL > angular.json
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "skeleton:build:production"
+              "browserTarget": "$PROJECT_NAME:build:production"
             },
             "development": {
-              "browserTarget": "skeleton:build:development",
+              "browserTarget": "$PROJECT_NAME:build:development",
               "host": "0.0.0.0",
               "disableHostCheck": true,
               "port": $PORT

@@ -5,3 +5,6 @@ node_modules
 .DS_Store
 angular.json
 dist
+server.log
+npmInstall.log
+compile.log
