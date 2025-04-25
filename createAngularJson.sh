@@ -1,8 +1,10 @@
+cat <<EOL > angular.json
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "\$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -66,7 +68,7 @@
               "browserTarget": "skeleton:build:development",
               "host": "0.0.0.0",
               "disableHostCheck": true,
-              "port": 24001
+              "port": $PORT
             }
           },
           "defaultConfiguration": "development"
@@ -75,3 +77,4 @@
     }
   }
 }
+EOL
