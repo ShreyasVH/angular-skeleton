@@ -3,3 +3,5 @@ node_modules
 .idea
 .angular
 .DS_Store
+angular.json
+dist
